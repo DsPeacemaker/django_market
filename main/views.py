@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from goods.models import Categories
+
 
 def index(request) -> HttpResponse:
     """в request попадает экземпляр класса http.request
@@ -8,9 +10,13 @@ def index(request) -> HttpResponse:
     вся возможнач информация о запросе попадает в этот параметр
     POST, GET, какой пользователей и тд
     """
+
+    categories = Categories.objects.all()
+
     context = {
         'title': 'Home - Главная',
         'content': 'Магазин мебели HOME',
+        'categories': categories
     }
     return render(request, 'main/index.html', context)
 
