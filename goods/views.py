@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.shortcuts import get_object_or_404, get_list_or_404, render
+from django.shortcuts import get_list_or_404, render
 
 from goods.models import Products
 
@@ -27,7 +27,7 @@ def catalog(request, category_slug=None):
     current_page = paginator.page(int(page))
 
     context = {
-        'title': 'Home - Каталог',
+        'title': 'Хлебальник - Каталог',
         'goods': current_page,
         'slug_url': category_slug,
     }
