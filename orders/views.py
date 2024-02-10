@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.shortcuts import render, redirect
 from django.forms import ValidationError
@@ -9,6 +10,7 @@ from orders.models import Order, OrderItem
 from carts.models import Cart
 
 
+@login_required
 def create_order(request):
     if request.method == 'POST':
         form = CreateOrderForm(data=request.POST)
@@ -34,7 +36,7 @@ def create_order(request):
                             price = cart_item.product.sell_price()
                             quantity = cart_item.quantity
 
-                            if product.quantity <  quantity:
+                            if product.quantity < quantity:
                                 raise ValidationError(f'Недостаточное количество товара {name} в наличии\
                                                         В наличии - {product.quantity}')
 
@@ -67,6 +69,7 @@ def create_order(request):
     context = {
         'title': 'Oформление заказа',
         'form': form,
+        'orders': True,
     }
 
     return render(request, 'orders/create_order.html', context=context)
