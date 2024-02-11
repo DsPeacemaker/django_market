@@ -38,7 +38,7 @@ def login(request):
         form = UserLoginForm()
 
     context = {
-        'title': 'Хлебальник - Авторизация',
+        'title': 'Колобок - Авторизация',
         'form': form,
     }
     return render(request, 'users/login.html', context)
@@ -64,7 +64,7 @@ def registration(request):
         form = UserRegistrationForm()
 
     context = {
-        'title': 'Хлебальник - Регистрация',
+        'title': 'Колобок - Регистрация',
         'form': form
     }
     return render(request, 'users/registration.html', context)
@@ -91,7 +91,7 @@ def profile(request):
         ).order_by('-id')
     )
     context = {
-        'title': 'Хлебальник - Личный кабинет',
+        'title': 'Колобок - Личный кабинет',
         'form': form,
         'orders': orders,
     }

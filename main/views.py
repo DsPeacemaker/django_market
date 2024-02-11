@@ -14,8 +14,8 @@ def index(request) -> HttpResponse:
     categories = Categories.objects.all()
 
     context = {
-        'title': 'Пекарня Хлебальник - Вкус настоящего хлеба',
-        'content': 'Интернет-магазин пекарни Хлебальник',
+        'title': 'Пекарня Колобок - Вкус настоящего хлеба',
+        'content': 'Интернет-магазин пекарни Колобок',
         'categories': categories
     }
     return render(request, 'main/index.html', context)
@@ -23,7 +23,7 @@ def index(request) -> HttpResponse:
 
 def about(request) -> HttpResponse:
     context = {
-        'title': 'Хлебальник - О нас',
+        'title': 'Колобок - О нас',
         'content': 'О нас',
         'text_on_page': 'Вкус настоящей домашней выпечки',
     }
@@ -31,7 +31,7 @@ def about(request) -> HttpResponse:
 
 def delivery(request) -> HttpResponse:
     context = {
-        'title': 'Хлебальник - Доставка и оплата',
+        'title': 'Колобок - Доставка и оплата',
         'content': 'Как мы доставляем',
         'text_on_page': 'Вкус настоящей домашней выпечки',
     }
@@ -39,7 +39,7 @@ def delivery(request) -> HttpResponse:
 
 def contacts(request) -> HttpResponse:
     context = {
-        'title': 'Хлебальник - Контакты',
+        'title': 'Колобок - Контакты',
         'content': 'Наши контакты',
         'text_on_page': 'Вкус настоящей домашней выпечки',
     }
