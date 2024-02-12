@@ -38,6 +38,7 @@ def product(request, product_slug):
     product = Products.objects.get(slug=product_slug)
 
     context = {
+        'title': product.name,
         'product': product
     }
 

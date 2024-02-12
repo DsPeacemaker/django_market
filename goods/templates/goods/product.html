@@ -39,7 +39,25 @@
         <div class="card-body">
             <p class="card-text">Цена: <strong>{{ product.sell_price }} ₽</strong></p>
             <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text"><strong>Описание: </strong> {% if product.description %}
+                    {{ product.description }}
+                {% else %}
+                    {{ product.name }}, ммм, пальчики оближешь! :)
+                {% endif %} </p>
+            {% if product.composition %}
+                <p class="card-text"><strong>Состав:</strong> {{ product.composition }}</p>
+            {% endif %}
+            {% if product.expiration %}
+                <p class="card-text"><strong>Срок годности:</strong> {{ product.expiration }} суток</p>
+            {% else %}
+                <p class="card-text"><strong>Срок годности:</strong> 2 суток</p>
+            {% endif %}
+            {% if product.temperature %}
+                <p class="card-text"><strong>Темпераутра хранения:</strong> {{ product.temperature }} суток</p>
+            {% else %}
+                <p class="card-text"><strong>Темпераутра хранения:</strong> 15±3°С </p>
+            {% endif %}
+            
             <a href="{% url 'cart:cart_add' %}" class="btn btn-dark add-to-cart"
             data-product-id="{{ product.id }}">
                 {% csrf_token %}
