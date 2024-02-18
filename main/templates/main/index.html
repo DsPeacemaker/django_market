@@ -11,6 +11,28 @@
 
 {% block content %}
     <h1 class="mt-5 pt-5 "><strong>{{ content }}</strong></h1>
+    <h2 class="mt-5 pt-5 "><strong>Наша продукция</strong></h2>
+    <div class="slideshow">
+        <div class="slideshow-item">
+            <img src="{% static "deps/images/goods/assorted.jpeg" %}" alt="">
+        </div>
+        <div class="slideshow-item">
+            <img src="{% static "deps/images/goods/casserole.jpg" %}" alt="">
+        </div>
+        <div class="slideshow-item">
+            <img src="{% static "deps/images/goods/pie.jpg" %}" alt="">
+        </div>
+        <div class="slideshow-item">
+            <img src="{% static "deps/images/goods/maffins.jpg" %}" alt="">
+        </div>
+        <div class="slideshow-item">
+            <img src="{% static "deps/images/goods/kruasson.jpg" %}" alt="">
+        </div>
+    </div>
+
+    <h1 class="mt-5 pt-5 "><strong>Блок популярных товаров</strong></h1>
+    <h1 class="mt-5 pt-5 "><strong>Блок рекомендаций для авторизованных пользователей</strong></h1>
+    <h1 class="mt-5 pt-5 "><strong>Блок отзывов покупателей if их > 5 и отзыв 5 звезд</strong></h1>
 {% endblock %}
 
 {% block footer %}
