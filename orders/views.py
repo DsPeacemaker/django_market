@@ -46,6 +46,7 @@ def create_order(request):
                                 name=name,
                                 price=price,
                                 quantity=quantity,
+                                total_price=price*quantity,
                             )
                             product.quantity -= quantity
                             product.save()

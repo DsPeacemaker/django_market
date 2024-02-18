@@ -111,6 +111,7 @@
                                                     <th>Количество</th>
                                                     <th>Цена</th>
                                                     <th>Общая стоимость</th>
+                                                    <th>Итого к оплате</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -119,8 +120,8 @@
                                                     <td><a class="text-white" href="{% url 'goods:product' item.product.slug %}">{{ item.product.name }}</a></td>
                                                     <td>{{ item.quantity }}</td>
                                                     <td>{{ item.price }}</td>
-                                                    <td>{{ item.product_price }}</td>
-
+                                                    <td>{{ item.products_price }}</td>
+                                                    <td>{{ item.total_price }}</td>
                                                 </tr>
                                                 {% endfor %}
                                             </tbody>
