@@ -38,7 +38,7 @@ class OrderItem(models.Model):
     order = models.ForeignKey(to=Order, on_delete=models.CASCADE, verbose_name="Заказ")
     product = models.ForeignKey(to=Products, on_delete=models.SET_DEFAULT, null=True, verbose_name="Продукт", default=None)
     name = models.CharField(max_length=150, verbose_name="Название")
-    price = models.PositiveIntegerField(default=0, verbose_name="Количество")
+    price = models.PositiveIntegerField(default=0, verbose_name="Цена за штуку")
     quantity = models.PositiveIntegerField(default=0, verbose_name="Количество")
     total_price = models.PositiveIntegerField(default=0, verbose_name="Итого к оплате")
     created_timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Дата продажи")

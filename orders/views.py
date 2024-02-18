@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.forms import ValidationError
 from orders.forms import CreateOrderForm
 
-from orders.models import Order, OrderItem
+from orders.models import Order, OrderItem, OrderitemQueryset
 
 from carts.models import Cart
 
@@ -35,6 +35,7 @@ def create_order(request):
                             name = cart_item.product.name
                             price = cart_item.product.sell_price()
                             quantity = cart_item.quantity
+                            total_price = price * quantity
 
                             if product.quantity < quantity:
                                 raise ValidationError(f'Недостаточное количество товара {name} в наличии\
@@ -46,7 +47,7 @@ def create_order(request):
                                 name=name,
                                 price=price,
                                 quantity=quantity,
-                                total_price=price*quantity,
+                                total_price=total_price,
                             )
                             product.quantity -= quantity
                             product.save()

@@ -8,7 +8,7 @@ from orders.models import Order, OrderItem
 
 class OrderItemTabulareAdmin(admin.TabularInline):
     model = OrderItem
-    fields = 'product', 'name', 'price', 'quantity'
+    fields = 'product', 'name', 'price', 'quantity', 'total_price'
     search_fields = (
         'product',
         'name',
