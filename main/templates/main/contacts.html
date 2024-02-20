@@ -12,15 +12,20 @@
 {% block content %}
     <div class="mt-5 pt-5 bg-white custom-shadow rounded">
         <h2 class="m-2"><strong>{{ content }}</strong></h2>
-        <p class="m-2">{{ text_on_page }}</p>
+        <p class="m-2">{{ text_on_page }} <br> рядом с троллейбусной и трамвайной остановкой. </p>
+        <p class="m-2">Но с нами всегда можно связаться по телефону: 8-800-555-35-35 </p>
+        <p class="m-2">Или написать на почту kolobok@mail.ru  </p>
+        <p class="m-2">Пишите по всем интересующим Вас вопросам на почту, мы обязательно ответим! :)</p>
     </div>
+    <script type="text/javascript" charset="utf-8" 
+    async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7b7b7054159155e83aa33b4d5e11b3f3a668bdb9318365b4f0e7bbe04d871b99&amp;width=770&amp;height=400&amp;lang=en_FR&amp;scroll=true"></script>
 {% endblock %}
 
 {% block footer %}
         <footer class="py-4 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; DsPeacemaker</p>
-            <p class="m-0 text-center text-white"><a href="https://github.com/DsPeacemaker">GitHub</a></p>
+            <p class="m-0 text-center text-white">Copyright &copy; <a href="https://github.com/DsPeacemaker">DsPeacemaker</a></p>
         </div>
     </footer>
 {% endblock %}
+

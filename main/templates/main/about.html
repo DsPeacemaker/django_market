@@ -15,7 +15,7 @@
         <h2 class="m-2"><strong>{{ content }}</strong></h2>
         <p class="m-2">{{ text_on_page }}</p>
     </div>
-    <h2 class="mt-5 pt-5 "><strong>Наша продукция</strong></h2>
+    <h2 class="mt-5 pt-5 " style="color: White"><strong>Наша продукция</strong></h2>
     <div class="slideshow">
         <div class="slideshow-item">
             <img src="{% static "deps/images/goods/assorted.jpeg" %}" alt="">
@@ -34,13 +34,28 @@
             <img src="{% static "deps/images/goods/waffles.jpg" %}" alt="">
         </div>
     </div>
+
+    <div class="mt-5 pt-5 bg-white custom-shadow rounded">
+        <h2 class="m-2"><strong>Наша замечательная команда</strong></h2>
+        <img src="{% static 'deps/images/портф.png' %}"
+        alt="Аватар пользователя" class="img-fluid rounded-circle"
+        style="max-width: 150px;">
+        <img src="{% static 'deps/images/lead.png' %}"
+        alt="Аватар пользователя" class="img-fluid rounded-circle"
+        style="max-width: 150px;">
+        <img src="{% static 'deps/images/prod.png' %}"
+        alt="Аватар пользователя" class="img-fluid rounded-circle"
+        style="max-width: 150px;">
+        <pre>  Backend Developer   Frontend Developer   Product Manager
+        <br> Денис DsPeacemaker   Денис DsPeacemaker   Денис DsPeacemaker
+        </pre>
+    </div>
 {% endblock %}
 
 {% block footer %}
         <footer class="py-4 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; DsPeacemaker</p>
-            {% comment %} <p class="m-0 text-center text-white"><a href="https://github.com/DsPeacemaker">GitHub</a></p> {% endcomment %}
+            <p class="m-0 text-center text-white">Copyright &copy; <a href="https://github.com/DsPeacemaker">DsPeacemaker</a></p>
         </div>
     </footer>
 {% endblock %}

@@ -35,8 +35,8 @@ def about(request) -> HttpResponse:
 def delivery(request) -> HttpResponse:
     context = {
         'title': 'Колобок - Доставка и оплата',
-        'content': 'Как мы доставляем',
-        'text_on_page': 'Вкус настоящей домашней выпечки',
+        'content': 'Как мы доставляем нашу продукцию',
+        'text_on_page': 'Доставка возможна от сумммы в 500 рублей за один заказ',
     }
     return render(request, 'main/delivery.html', context)
 
@@ -44,6 +44,6 @@ def contacts(request) -> HttpResponse:
     context = {
         'title': 'Колобок - Контакты',
         'content': 'Наши контакты',
-        'text_on_page': 'Вкус настоящей домашней выпечки',
+        'text_on_page': 'Наша пекарня находится по адресу ул. Ставропольская 220, '
     }
     return render(request, 'main/contacts.html', context)
